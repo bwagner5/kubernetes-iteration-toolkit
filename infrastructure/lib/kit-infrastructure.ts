@@ -28,6 +28,21 @@ export class KITInfrastructure extends Stack {
     const testSA = this.node.tryGetContext("TestServiceAccount")
     const testNS = this.node.tryGetContext("TestNamespace")
 
+    console.log("REPO URL: " + repoUrl);
+    console.log("REPO BRANCH: " + repoBranch);
+    console.log("REPO PATH: " + repoPath);
+    console.log("EBS CSI ADDON: " + installEBSCSIDriverAddon);
+    console.log("Karpenter Addon: " + installKarpenterAddon);
+    console.log("KIT Addon: " + installKitAddon);
+    console.log("Flux Repo Addons Path: " + repoAddonPaths);
+
+    console.log("Test Repo Name: " + testRepoName);
+    console.log("Test Repo URL: " + testRepoUrl);
+    console.log("Test Repo Branch: " + testRepoBranch);
+    console.log("Test Repo Path: " + testRepoPath);
+    console.log("Test SA: " + testSA);
+    console.log("Test NS: " + testNS);
+
     // A VPC, including NAT GWs, IGWs, where we will run our cluster
     const vpc = new ec2.Vpc(this, 'VPC', {});
 
